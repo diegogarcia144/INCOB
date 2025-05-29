@@ -580,6 +580,150 @@ body.dashboard {
     }
 }
 
+/* Activity Log Specific Styles */
+.activity-header {
+    margin-bottom: 30px;
+}
+
+.activity-header h1 {
+    color: var(--text-primary);
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.activity-header h2 {
+    color: var(--text-secondary);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.activity-user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--border-light);
+}
+
+.activity-user-info h3 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.activity-count {
+    background: var(--primary-dark);
+    color: var(--text-white);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* Activity Table */
+.activity-table-container {
+    background: var(--primary-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px var(--shadow-light);
+    margin-bottom: 30px;
+}
+
+.activity-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.activity-table th {
+    padding: 18px 15px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    background: var(--background-light);
+    border-bottom: 2px solid var(--border-light);
+}
+
+.activity-table td {
+    padding: 18px 15px;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+.activity-table tbody tr:hover {
+    background: rgba(26, 35, 50, 0.02);
+}
+
+/* Status badges */
+.status-success {
+    background: #28a745;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+/* Footer */
+.activity-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--primary-dark);
+    color: var(--text-white);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: var(--primary-darker);
+}
+
+.activity-pagination {
+    display: flex;
+    gap: 5px;
+}
+
+/* Responsive log */
+@media (max-width: 992px) {
+    .activity-table {
+        min-width: 1000px;
+    }
+    
+    .activity-table-container {
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .activity-footer {
+        flex-direction: column;
+    }
+    
+    .back-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .activity-pagination {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INCOB - Registro de Actividades</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/CSS/style.css">
+</head>
+<body class="dashboard">
+    <div class="dashboard-container">
+        <!-- Your existing sidebar -->
+        <div class="sidebar">
+            <div class="user-profile">
+                <div class="user-avatar">CR</div>
+                <div class="user-info">
+                    <div class="user-name">Carlos Romero,</div>
+                    <div class="user-greeting">Bienvenido.</div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Panel admin.</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-boxes"></i>
+                    <span>Inventario</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Calendario</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Ventas</span>
+                </a>
+            </nav>
+
+            <div class="logout-section">
+                <a href="#" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Cerrar sesión</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="content-area">
+                <div class="activity-header">
+                    <h1>Carlos Romero, Bienvenido.</h1>
+                    <h2>Panel admin.</h2>
+                    
+                    <div class="activity-user-info">
+                        <h3>Registro de actividades de: <strong>Martina Gómez</strong></h3>
+                        <div class="activity-count">1 ACT</div>
+                    </div>
+                </div>
+
+                <div class="activity-table-container">
+                    <table class="activity-table">
+                        <thead>
+                            <tr>
+                                <th>Usuario</th>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                                <th>Tipo de acción</th>
+                                <th>Categoría</th>
+                                <th>Descripción</th>
+                                <th>Estado</th>
+                                <th>IP</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Martina Gómez</td>
+                                <td>23/05/2025</td>
+                                <td>10:18:45</td>
+                                <td>Creación</td>
+                                <td>Inventario</td>
+                                <td>Agregado producto: "Bonyurt", ID 501, cantidad 50 unidades</td>
+                                <td>Éxitoso</td>
+                                <td>192.168.0.25 / Firefox</td>
+                            </tr>
+                            <!-- Additional rows would go here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="activity-footer">
+                    <button class="back-btn">
+                        <i class="fas fa-arrow-left"></i> Volver al panel
+                    </button>
+                    
+                    <div class="activity-pagination">
+                        <button class="page-btn">Primera</button>
+                        <button class="page-btn">Anterior</button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">Siguiente</button>
+                        <button class="page-btn">Última</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
