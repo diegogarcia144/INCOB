@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INCOB - Panel de Control</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="dashboard">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="user-profile">
+                <div class="user-avatar">CR</div>
+                <div class="user-info">
+                    <div class="user-name">Carlos Romero,</div>
+                    <div class="user-greeting">Bienvenido.</div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Panel admin.</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-boxes"></i>
+                    <span>Inventario</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Calendario</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Ventas</span>
+                </a>
+            </nav>
+
+            <div class="logout-section">
+                <a href="#" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Cerrar sesión</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="content-area">
+                <div class="content-header">
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Buscar...">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                    <button class="add-btn">
+                        <i class="fas fa-plus"></i>
+                        <span>Añadir</span>
+                    </button>
+                </div>
+
+                <div class="table-container">
+                    <table class="users-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre Usuario</th>
+                                <th>Email</th>
+                                <th>Contraseña</th>
+                                <th>F. registro</th>
+                                <th>Estado</th>
+                                <th>Historial</th>
+                                <th>Roles</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>101</td>
+                                <td>Martina Gómez</td>
+                                <td>martina.gomez82@ejemplo.com</td>
+                                <td>••••••••</td>
+                                <td>14/02/2023</td>
+                                <td><span class="status-badge status-active"></span></td>
+                                <td><button class="view-btn">Visualizar</button></td>
+                                <td>Gestor de inventario</td>
+                                <td class="actions-cell">
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>102</td>
+                                <td>Juan Pérez</td>
+                                <td>juanperez123@correo.org</td>
+                                <td>••••••••</td>
+                                <td>08/07/2024</td>
+                                <td><span class="status-badge status-warning"></span></td>
+                                <td><button class="view-btn">Visualizar</button></td>
+                                <td>Administrador</td>
+                                <td class="actions-cell">
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>103</td>
+                                <td>Sofía</td>
+                                <td>sofia.techdev@falso.net</td>
+                                <td>••••••••</td>
+                                <td>30/11/2022</td>
+                                <td><span class="status-badge status-inactive"></span></td>
+                                <td><button class="view-btn">Visualizar</button></td>
+                                <td>Usuario</td>
+                                <td class="actions-cell">
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>104</td>
+                                <td>Carlos Ramos</td>
+                                <td>carlos.ramos88@dominioricticio.com</td>
+                                <td>••••••••</td>
+                                <td>21/09/2023</td>
+                                <td><span class="status-badge status-active"></span></td>
+                                <td><button class="view-btn">Visualizar</button></td>
+                                <td>Gestor de inventario</td>
+                                <td class="actions-cell">
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>105</td>
+                                <td>Ana López</td>
+                                <td>ana.lopez@pruebamail.co</td>
+                                <td>••••••••</td>
+                                <td>05/01/2025</td>
+                                <td><span class="status-badge status-warning"></span></td>
+                                <td><button class="view-btn">Visualizar</button></td>
+                                <td>Usuario</td>
+                                <td class="actions-cell">
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>106</td>
+                                <td>Usuario Test</td>
+                                <td>usuario.test90@demoomail.com</td>
+                                <td>••••••••</td>
+                                <td>17/03/2024</td>
+                                <td><span class="status-badge status-inactive"></span></td>
+                                <td><button class="view-btn">Visualizar</button></td>
+                                <td>Administrador</td>
+                                <td class="actions-cell">
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>107</td>
+                                <td>Laura Méndez</td>
+                                <td>laura.mendez@correo.net</td>
+                                <td>••••••••</td>
+                                <td>12/05/2023</td>
+                                <td><span class="status-badge status-active"></span></td>
+                                <td><button class="view-btn">Visualizar</button></td>
+                                <td>Supervisor</td>
+                                <td class="actions-cell">
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>108</td>
+                                <td>Roberto Sánchez</td>
+                                <td>roberto.sanchez@mailfalso.com</td>
+                                <td>••••••••</td>
+                                <td>28/08/2024</td>
+                                <td><span class="status-badge status-active"></span></td>
+                                <td><button class="view-btn">Visualizar</button></td>
+                                <td>Gestor de ventas</td>
+                                <td class="actions-cell">
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <!-- More rows... -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-footer">
+                    <button class="footer-btn">Registrar Devolución</button>
+                    
+                    <div class="pagination">
+                        <button class="page-btn">Primera</button>
+                        <button class="page-btn">Anterior</button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">Siguiente</button>
+                        <button class="page-btn">Última</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>
