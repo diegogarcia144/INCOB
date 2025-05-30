@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INCOB - Exportar Ventas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/CSS/style.css">
+</head>
+<body class="dashboard">
+    <div class="dashboard-container">
+        
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="user-profile">
+                <div class="user-avatar">MG</div>
+                <div class="user-info">
+                    <div class="user-name">Martina Gómez,</div>
+                    <div class="user-greeting">Bienvenida.</div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="../usuario/adminpanel.html" class="nav-item active">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Panel admin.</span>
+                </a>
+                <a href="../inventario/inventory.html" class="nav-item">
+                    <i class="fas fa-boxes"></i>
+                    <span>Inventario</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Calendario</span>
+                </a>
+                <a href="../ventas/sales.html" class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Ventas</span>
+                </a>
+            </nav>
+
+            <div class="logout-section">
+                <a href="../usuario/index.html" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Cerrar Sesión</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="content-area">
+                <div class="edit-user-header">
+                    <h1>Exportar Ventas</h1>
+                    <h2>Ventas <i class="fas fa-angle-right"></i> Exportar Datos</h2>
+                </div>
+
+                <!-- Form -->
+                <div class="return-form-container">
+                    <form id="exportForm">
+                        <div class="form-grid">
+                            <!-- Left Column -->
+                            <div class="form-column">
+                                <div class="form-group">
+                                    <label for="exportFormat">Formato de Exportación*</label>
+                                    <select id="exportFormat" name="exportFormat" class="form-input" required>
+                                        <option value="">Seleccionar formato...</option>
+                                        <option value="excel">Excel (.xlsx)</option>
+                                        <option value="csv">CSV (.csv)</option>
+                                        <option value="pdf">PDF (.pdf)</option>
+                                        <option value="json">JSON (.json)</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="dateRange">Rango de Fechas*</label>
+                                    <select id="dateRange" name="dateRange" class="form-input" required>
+                                        <option value="">Seleccionar período...</option>
+                                        <option value="today">Hoy</option>
+                                        <option value="yesterday">Ayer</option>
+                                        <option value="last_7_days">Últimos 7 días</option>
+                                        <option value="last_30_days">Últimos 30 días</option>
+                                        <option value="this_month">Este mes</option>
+                                        <option value="last_month">Mes anterior</option>
+                                        <option value="this_year">Este año</option>
+                                        <option value="custom">Personalizado</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="startDate">Fecha de Inicio</label>
+                                    <input type="date" id="startDate" name="startDate" class="form-input">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="endDate">Fecha de Fin</label>
+                                    <input type="date" id="endDate" name="endDate" class="form-input">
+                                </div>
+                            </div>
+
+                            <!-- Right Column -->
+                            <div class="form-column">
+                                <div class="form-group">
+                                    <label for="dataType">Tipo de Datos*</label>
+                                    <select id="dataType" name="dataType" class="form-input" required>
+                                        <option value="">Seleccionar datos...</option>
+                                        <option value="all_sales">Todas las ventas</option>
+                                        <option value="sales_summary">Resumen de ventas</option>
+                                        <option value="products_sold">Productos vendidos</option>
+                                        <option value="payment_methods">Métodos de pago</option>
+                                        <option value="sales_by_category">Ventas por categoría</option>
+                                        <option value="daily_sales">Ventas diarias</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="sortBy">Ordenar por</label>
+                                    <select id="sortBy" name="sortBy" class="form-input">
+                                        <option value="date_desc">Fecha (más reciente)</option>
+                                        <option value="date_asc">Fecha (más antigua)</option>
+                                        <option value="amount_desc">Monto (mayor a menor)</option>
+                                        <option value="amount_asc">Monto (menor a mayor)</option>
+                                        <option value="client_name">Nombre del cliente</option>
+                                        <option value="product_name">Nombre del producto</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="includeTax">Incluir Impuestos</label>
+                                    <select id="includeTax" name="includeTax" class="form-input">
+                                        <option value="yes">Sí, incluir impuestos</option>
+                                        <option value="no">No, sin impuestos</option>
+                                        <option value="separate">Mostrar por separado</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="currency">Moneda</label>
+                                    <select id="currency" name="currency" class="form-input">
+                                        <option value="cop">Pesos Colombianos (COP)</option>
+                                        <option value="usd">Dólares Americanos (USD)</option>
+                                        <option value="eur">Euros (EUR)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Additional Options -->
+                        <div class="form-group full-width">
+                            <label>Opciones Adicionales</label>
+                            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+                                <label>
+                                    <input type="checkbox" name="includeRefunds"> Incluir devoluciones
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="includeDiscounts"> Incluir descuentos aplicados
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="includeCustomerInfo"> Incluir información del cliente
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="includeProductDetails"> Incluir detalles del producto
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="includePaymentDetails"> Incluir detalles del método de pago
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Notes -->
+                        <div class="form-group full-width">
+                            <label for="notes">Notas para el Reporte</label>
+                            <textarea id="notes" name="notes" class="form-input" rows="3" placeholder="Agregar comentarios o instrucciones especiales para el reporte..."></textarea>
+                        </div>
+
+                        <!-- Form buttons -->
+                        <div class="form-actions">
+                            <button type="reset" class="sales-btn">
+                                <i class="fas fa-times"></i> Cancelar
+                            </button>
+                            <button type="submit" class="sales-btn">
+                                <i class="fas fa-download"></i> Exportar Ventas
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>

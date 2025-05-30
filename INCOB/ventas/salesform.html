@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INCOB - Registrar Venta</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/CSS/style.css">
+</head>
+<body class="dashboard">
+    <div class="dashboard-container">
+        
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="user-profile">
+                <div class="user-avatar">CR</div>
+                <div class="user-info">
+                    <div class="user-name">Carlos Romero,</div>
+                    <div class="user-greeting">Bienvenido.</div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="../usuario/adminpanel.html" class="nav-item active">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Panel admin.</span>
+                </a>
+                <a href="../inventario/inventory.html" class="nav-item">
+                    <i class="fas fa-boxes"></i>
+                    <span>Inventario</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Calendario</span>
+                </a>
+                <a href="../ventas/sales.html" class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Ventas</span>
+                </a>
+            </nav>
+
+            <div class="logout-section">
+                <a href="../usuario/index.html" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Cerrar sesión</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="content-area">
+                <div class="edit-user-header">
+                    <h1>Añadir nueva venta</h1>
+                    <h2>Ventas <i class="fas fa-angle-right"></i> Registrar Venta</h2>
+                </div>
+                <!-- Header -->
+                <div class="content-header">
+                    
+                    
+                </div>
+
+                <!-- Form -->
+                <div class="return-form-container">
+                    <form id="paymentMethodForm">
+                        <div class="form-grid">
+                            <!-- Left Column -->
+                            <div class="form-column">
+                                <div class="form-group">
+                                    <label for="client">Cliente*</label>
+                                    <input type="text" id="cardNumber" name="cardNumber" class="form-input" placeholder="Nombre del cliente">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="paymentMethod">Método de Pago*</label>
+                                    <select id="paymentMethod" name="paymentMethod" class="form-input" required>
+                                        <option value="">Seleccionar método...</option>
+                                        <option value="credit_card">Tarjeta de Crédito</option>
+                                        <option value="debit_card">Tarjeta de Débito</option>
+                                        <option value="cash">Efectivo</option>
+                                        <option value="transfer">Transferencia Bancaria</option>
+                                        <option value="nequi">Nequi</option>
+                                        <option value="daviplata">Daviplata</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="cardNumber">Tipo de cuenta(si aplica)</label>
+                                    <input type="text" id="cardNumber" name="cardNumber" class="form-input" placeholder="Ahorros / Corriente">
+                                </div>
+                            </div>
+
+                            <!-- Right Column -->
+                            <div class="form-column">
+                                <div class="form-group">
+                                    <label for="date">Fecha*</label>
+                                    <input type="date" id="date" name="date" class="form-input" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="amount">Total*</label>
+                                    <input type="number" id="amount" name="amount" class="form-input" placeholder="$0.00" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Estado</label>
+                                    <div class="status-display">
+                                        <span class="status-badge status-active"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Aditional details -->
+                        <div class="form-group full-width">
+                            <label for="notes">Notas Adicionales</label>
+                            <textarea id="notes" name="notes" class="form-input" rows="3" placeholder="Observaciones o detalles adicionales..."></textarea>
+                        </div>
+
+                        <!-- Form btns -->
+                        <div class="form-actions">
+                            <button type="reset" class="sales-btn">
+                                <i class="fas fa-times"></i> Cancelar
+                            </button>
+                            <button type="submit" class="sales-btn">
+                                <i class="fas fa-save"></i> Guardar Método
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/scripts.js"></script>
+    <script>
+        // Establecer fecha actual por defecto
+        document.getElementById('date').valueAsDate = new Date();
+        
+        // Validación del formulario
+        document.getElementById('paymentMethodForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Aquí iría la lógica para guardar los datos
+            alert('Método de pago registrado exitosamente');
+            // this.reset();
+        });
+    </script>
+</body>
+</html>

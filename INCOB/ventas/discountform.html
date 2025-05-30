@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INCOB - Añadir Descuento/Promoción</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/CSS/style.css">
+</head>
+<body class="dashboard">
+    <div class="dashboard-container">
+        
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="user-profile">
+                <div class="user-avatar">MG</div>
+                <div class="user-info">
+                    <div class="user-name">Martina Gómez,</div>
+                    <div class="user-greeting">Bienvenida.</div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="../usuario/adminpanel.html" class="nav-item active">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Panel admin.</span>
+                </a>
+                <a href="../inventario/inventory.html" class="nav-item">
+                    <i class="fas fa-boxes"></i>
+                    <span>Inventario</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Calendario</span>
+                </a>
+                <a href="../ventas/sales.html" class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Ventas</span>
+                </a>
+            </nav>
+
+            <div class="logout-section">
+                <a href="../usuario/index.html" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Cerrar Sesión</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="content-area">
+                <div class="edit-user-header">
+                    <h1>Añadir Descuento/Promoción</h1>
+                    <h2>Inventario <i class="fas fa-angle-right"></i> Descuentos y Promociones</h2>
+                </div>
+
+                <!-- Form -->
+                <div class="return-form-container">
+                    <form id="discountForm">
+                        <div class="form-grid">
+                            <!-- Left Column -->
+                            <div class="form-column">
+                                <div class="form-group">
+                                    <label for="discountName">Nombre del Descuento/Promoción*</label>
+                                    <input type="text" id="discountName" name="discountName" class="form-input" placeholder="Ej: Oferta de Fin de Semana" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="discountType">Tipo de Descuento*</label>
+                                    <select id="discountType" name="discountType" class="form-input" required>
+                                        <option value="">Seleccionar tipo...</option>
+                                        <option value="percentage">Porcentaje (%)</option>
+                                        <option value="fixed">Monto Fijo ($)</option>
+                                        <option value="buy_get">Compra X Lleva Y</option>
+                                        <option value="combo">Combo/Paquete</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="discountValue">Valor del Descuento*</label>
+                                    <input type="number" id="discountValue" name="discountValue" class="form-input" placeholder="10" min="0" step="0.01" required>
+                                    <small class="form-hint">Ingrese el porcentaje (sin %) o monto en pesos ($)</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="applyTo">Aplicar a*</label>
+                                    <select id="applyTo" name="applyTo" class="form-input" required onchange="toggleSelection()">
+                                        <option value="">Seleccionar...</option>
+                                        <option value="product">Producto Específico</option>
+                                        <option value="category">Categoría Completa</option>
+                                        <option value="all">Todo el Inventario</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group" id="productSelection" style="display: none;">
+                                    <label for="selectedProduct">Seleccionar Producto</label>
+                                    <select id="selectedProduct" name="selectedProduct" class="form-input">
+                                        <option value="">Seleccionar producto...</option>
+                                        <option value="leche_alpina">Leche Alpina 1L</option>
+                                        <option value="pan_integral">Pan Integral Bimbo</option>
+                                        <option value="arroz_diana">Arroz Diana 500g</option>
+                                        <option value="pollo_pechuga">Pechuga de Pollo por Kg</option>
+                                        <option value="manzana_roja">Manzana Roja por Kg</option>
+                                        <option value="yogurt_alpina">Yogurt Alpina Natural</option>
+                                        <option value="aceite_girasol">Aceite de Girasol 1L</option>
+                                        <option value="queso_campesino">Queso Campesino 500g</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group" id="categorySelection" style="display: none;">
+                                    <label for="selectedCategory">Seleccionar Categoría</label>
+                                    <select id="selectedCategory" name="selectedCategory" class="form-input">
+                                        <option value="">Seleccionar categoría...</option>
+                                        <option value="dairy">Lácteos</option>
+                                        <option value="meat">Carnes</option>
+                                        <option value="vegetables">Verduras</option>
+                                        <option value="fruits">Frutas</option>
+                                        <option value="bakery">Panadería</option>
+                                        <option value="grains">Granos y Cereales</option>
+                                        <option value="beverages">Bebidas</option>
+                                        <option value="cleaning">Productos de Limpieza</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Right Column -->
+                            <div class="form-column">
+                                <div class="form-group">
+                                    <label for="startDate">Fecha de Inicio*</label>
+                                    <input type="date" id="startDate" name="startDate" class="form-input" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="endDate">Fecha de Fin*</label>
+                                    <input type="date" id="endDate" name="endDate" class="form-input" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="minPurchase">Compra Mínima</label>
+                                    <input type="number" id="minPurchase" name="minPurchase" class="form-input" placeholder="$0.00" min="0" step="0.01">
+                                    <small class="form-hint">Monto mínimo para aplicar el descuento (opcional)</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="maxDiscount">Descuento Máximo</label>
+                                    <input type="number" id="maxDiscount" name="maxDiscount" class="form-input" placeholder="$0.00" min="0" step="0.01">
+                                    <small class="form-hint">Monto máximo de descuento (opcional)</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="priority">Prioridad</label>
+                                    <select id="priority" name="priority" class="form-input">
+                                        <option value="low">Baja</option>
+                                        <option value="medium" selected>Media</option>
+                                        <option value="high">Alta</option>
+                                    </select>
+                                    <small class="form-hint">En caso de múltiples descuentos aplicables</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Additional details -->
+                        <div class="form-group full-width">
+                            <label for="description">Descripción de la Promoción</label>
+                            <textarea id="description" name="description" class="form-input" rows="3" placeholder="Describe los términos y condiciones de la promoción..."></textarea>
+                        </div>
+
+                        <!-- Terms and conditions -->
+                        <div class="form-group full-width">
+                            <label>
+                                <input type="checkbox" id="combineWithOthers" name="combineWithOthers">
+                                Permitir combinar con otros descuentos
+                            </label>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label>
+                                <input type="checkbox" id="notifyCustomers" name="notifyCustomers" checked>
+                                Notificar a clientes sobre esta promoción
+                            </label>
+                        </div>
+
+                        <!-- Form buttons -->
+                        <div class="form-actions">
+                            <button type="reset" class="sales-btn">
+                                <i class="fas fa-times"></i> Cancelar
+                            </button>
+                            <button type="submit" class="sales-btn">
+                                <i class="fas fa-save"></i> Guardar Descuento
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/scripts.js"></script>
+    <script>
+       
+    </script>
+</body>
+</html>

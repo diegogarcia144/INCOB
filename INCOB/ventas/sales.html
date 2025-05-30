@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INCOB - Ventas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/CSS/style.css">
+</head>
+<body class="dashboard">
+    <div class="dashboard-container">
+        <!-- Sidebar (same as existing) -->
+        <div class="sidebar">
+            <div class="user-profile">
+                <div class="user-avatar">CR</div>
+                <div class="user-info">
+                    <div class="user-name">Carlos Romero,</div>
+                    <div class="user-greeting">Bienvenido.</div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="../usuario/adminpanel.html" class="nav-item active">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Panel admin.</span>
+                </a>
+                <a href="../inventario/inventory.html" class="nav-item">
+                    <i class="fas fa-boxes"></i>
+                    <span>Inventario</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Calendario</span>
+                </a>
+                <a href="../ventas/sales.html" class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Ventas</span>
+                </a>
+            </nav>
+
+            <div class="logout-section">
+                <a href="../usuario/index.html" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Cerrar sesión</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="content-area">
+                
+                <!-- Sales Dashboard Header -->
+                <div class="sales-header">
+                    <div class="sales-actions">
+                        <button class="sales-btn">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Registrar Venta</span>
+                        </button>
+                        <button class="sales-btn">
+                            <i class="fas fa-tag"></i>
+                            <span>Descuentos y Promociones</span>
+                        </button>
+                        <button class="sales-btn">
+                            <i class="fas fa-file-export"></i>
+                            <span>Exportar</span>
+                        </button>
+                        
+                    </div>
+                </div>
+
+                <!-- Sales Dashboard Content -->
+                <div class="sales-dashboard">
+                    <!-- Payment Methods Chart -->
+                    <div class="sales-card chart-card">
+                        <h3 class="card-title">Métodos de Pago Más Utilizados</h3>
+                        <div class="chart-container">
+                            <div class="bar-chart">
+                                <div class="bar" style="height: 50px;" title="50"></div>
+                                <div class="bar" style="height: 40px;" title="40"></div>
+                                <div class="bar" style="height: 30px;" title="30"></div>
+                                <div class="bar" style="height: 20px;" title="20"></div>
+                                <div class="bar" style="height: 10px;" title="10"></div>
+                            </div>
+                            <div class="chart-labels">
+                                <span>Bancolombia</span>
+                                <span>Mastercard</span>
+                                <span>BBVA</span>
+                                <span>Nequi</span>
+                                <span>Banco Caja Social</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stats Cards -->
+                    <div class="stats-grid">
+                        <div class="stats-card">
+                            <div class="stats-content">
+                                <h4>GANANCIA TOTAL</h4>
+                                <p class="stats-value">$4.000.000</p>
+                                <p class="stats-change positive">+42%</p>
+                            </div>
+                            <div class="stats-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                        </div>
+
+                        <div class="stats-card">
+                            <div class="stats-content">
+                                <h4>NUEVOS CLIENTES</h4>
+                                <p class="stats-value">5.563</p>
+                                <p class="stats-change positive">+2.5%</p>
+                            </div>
+                            <div class="stats-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                        </div>
+
+                        <div class="stats-card">
+                            <div class="stats-content">
+                                <h4>CUENTAS ACTIVAS</h4>
+                                <p class="stats-value">55.563</p>
+                                <p class="stats-change positive">+4.2%</p>
+                            </div>
+                            <div class="stats-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Sales Table -->
+                    <div class="sales-card">
+                        <h3 class="card-title">Ventas Recientes</h3>
+                        <div class="table-container">
+                            <table class="sales-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID Venta</th>
+                                        <th>Cliente</th>
+                                        <th>Fecha</th>
+                                        <th>Método Pago</th>
+                                        <th>Total</th>
+                                        <th>Estado</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>R-05</td>
+                                        <td>Juan Pérez</td>
+                                        <td>15/05/2023</td>
+                                        <td>Mastercard</td>
+                                        <td>$120.000</td>
+                                        <td><span class="status-badge status-active"></span></td>
+                                        
+                                    </tr>
+                                    <!-- More rows would go here -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="table-footer">
+                            <div class="pagination">
+                                <button class="page-btn">Primera</button>
+                                <button class="page-btn">Anterior</button>
+                                <button class="page-btn active">1</button>
+                                <button class="page-btn">2</button>
+                                <button class="page-btn">Siguiente</button>
+                                <button class="page-btn">Última</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>

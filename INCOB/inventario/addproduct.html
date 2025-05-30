@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INCOB - Añadir Producto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/CSS/style.css">
+</head>
+<body class="dashboard">
+    <div class="dashboard-container">
+        <!-- Sidebar with Inventory active -->
+        <div class="sidebar">
+            <div class="user-profile">
+                <div class="user-avatar">MG</div>
+                <div class="user-info">
+                    <div class="user-name">Martina Gómez,</div>
+                    <div class="user-greeting">Bienvenido.</div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="../usuario/adminpanel.html" class="nav-item active">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Panel admin.</span>
+                </a>
+                <a href="../inventario/inventory.html" class="nav-item">
+                    <i class="fas fa-boxes"></i>
+                    <span>Inventario</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Calendario</span>
+                </a>
+                <a href="../ventas/sales.html" class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Ventas</span>
+                </a>
+            </nav>
+
+            <div class="logout-section">
+                <a href="../usuario/index.html" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Cerrar Sesión</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="content-area">
+                <!-- Breadcrumb Navigation -->
+                <div class="edit-user-header">
+                    <h1>Añadir Nuevo Producto</h1>
+                    <h2>Inventario <i class="fas fa-angle-right"></i> Añadir Producto</h2>
+                </div>
+
+                <!-- Product Form Container -->
+                <div class="product-form-container">
+                    <form class="product-form">
+                        <!-- Basic Information Section -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-info-circle"></i> Información Básica</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="product-name">Nombre del Producto*</label>
+                                    <div class="input-container">
+                                        <input type="text" id="product-name" class="form-input with-icon" placeholder="Ingrese el nombre del producto" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="product-category">Categoría*</label>
+                                    <div class="input-container">
+                                        
+                                        <select id="product-category" class="form-input with-icon" required>
+                                            <option value="">Seleccionar categoría...</option>
+                                            <option value="dairy">Lácteos</option>
+                                            <option value="meat">Carnes</option>
+                                            <option value="vegetables">Verduras</option>
+                                            <option value="fruits">Frutas</option>
+                                            <option value="bakery">Panadería</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="product-brand">Marca</label>
+                                    <div class="input-container">
+                                        
+                                        <input type="text" id="product-brand" class="form-input with-icon" placeholder="Nombre de la marca">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="product-barcode">Código de Barras</label>
+                                    <div class="input-container">
+                                        
+                                        <input type="text" id="product-barcode" class="form-input with-icon" placeholder="Escanear código de barras">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Inventory Details Section -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-boxes"></i> Detalles del Inventario</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="product-quantity">Cantidad*</label>
+                                    <div class="input-container">
+                                        
+                                        <input type="number" id="product-quantity" class="form-input with-icon" placeholder="0" min="0" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="product-unit">Unidad*</label>
+                                    <select id="product-unit" class="form-input" required>
+                                        <option value="">Seleccionar unidad...</option>
+                                        <option value="unit">Unidad</option>
+                                        <option value="kg">Kilogramo</option>
+                                        <option value="g">Gramo</option>
+                                        <option value="l">Litro</option>
+                                        <option value="ml">Mililitro</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="product-lot">Número de Lote</label>
+                                    <input type="text" id="product-lot" class="form-input" placeholder="Número de lote">
+                                </div>
+                                <div class="form-group">
+                                    <label for="product-expiry">Fecha de Vencimiento</label>
+                                    <div class="input-container">
+                                        
+                                        <input type="date" id="product-expiry" class="form-input with-icon">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pricing Section -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-tag"></i> Precios</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="product-cost">Precio de Costo</label>
+                                    <div class="input-container">
+                                        
+                                        <input type="number" id="product-cost" class="form-input with-icon" placeholder="0.00" min="0" step="0.01">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="product-price">Precio de Venta*</label>
+                                    <div class="input-container">
+                                        
+                                        <input type="number" id="product-price" class="form-input with-icon" placeholder="0.00" min="0" step="0.01" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form Actions -->
+                        <div class="form-actions">
+                            <button type="button" class="cancel-btn">
+                                <i class="fas fa-times"></i> Cancelar
+                            </button>
+                            <button type="submit" class="save-btn">
+                                <i class="fas fa-save"></i> Guardar Producto
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/scripts.js"></script>
+</body>
+</html>

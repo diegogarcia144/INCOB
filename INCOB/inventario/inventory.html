@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INCOB - Inventario de Productos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/CSS/style.css">
+</head>
+<body class="dashboard">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="user-profile">
+                <div class="user-avatar">MG</div>
+                <div class="user-info">
+                    <div class="user-name">Martina Gomez,</div>
+                    <div class="user-greeting">Bienvenido.</div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="../usuario/adminpanel.html" class="nav-item active">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Panel admin.</span>
+                </a>
+                <a href="../inventario/inventory.html" class="nav-item">
+                    <i class="fas fa-boxes"></i>
+                    <span>Inventario</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Calendario</span>
+                </a>
+                <a href="../ventas/sales.html" class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Ventas</span>
+                </a>
+            </nav>
+
+            <div class="logout-section">
+                <a href="../usuario/index.html" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Cerrar sesión</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="content-area">
+                <div class="content-header">
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Buscar producto...">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                    <div class="button-group">
+                        <button class="export-btn">
+                            <i class="fas fa-file-export"></i>
+                            <span>Exportar</span>
+                        </button>
+                        <button class="add-btn">
+                            <i class="fas fa-plus"></i>
+                            <span>Añadir producto</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table class="products-table">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Descripción</th>
+                                <th>Cantidad</th>
+                                <th>Marca</th>
+                                <th>Lote</th>
+                                <th>F. Vencimiento</th>
+                                <th>Estado</th>
+                                <th>Categoría</th>
+                                <th>Barcode</th>
+                                <th>Stock</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Leche -->
+                            <tr>
+                                <td>Leche</td>
+                                <td>Bolsa de leche 1100 ml</td>
+                                <td>1.und</td>
+                                <td>Parmalat</td>
+                                <td>20230705A</td>
+                                <td>29/06/2025</td>
+                                <td><span class="status-badge status-active"></td>
+                                <td>Lácteos</td>
+                                <td>7501031311309</td>
+                                <td>30</td>
+                                <td class="actions-cell">
+                                    <button class="action-btn edit-btn" title="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete-btn" title="Eliminar">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <!-- Queso -->
+                            <tr>
+                                <td>Queso</td>
+                                <td>Quesito pasteurizado 380g</td>
+                                <td>1.und</td>
+                                <td>Montefrío</td>
+                                <td>20240705A</td>
+                                <td>18/04/2025</td>
+                                <td><span class="status-badge status-warning"></span></td>
+                                <td>Lácteos</td>
+                                <td>7501031311310</td>
+                                <td>5</td>
+                                <td class="actions-cell">
+                                    <button class="action-btn edit-btn" title="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete-btn" title="Eliminar">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <!-- Yogurt -->
+                            <tr>
+                                <td>Yogurt</td>
+                                <td>Bolsa de yogurt 1000g</td>
+                                <td>1.und</td>
+                                <td>Alpina</td>
+                                <td>20240405A</td>
+                                <td>13/04/2025</td>
+                                <td><span class="status-badge status-active"></span></td>
+                                <td>Lácteos</td>
+                                <td>7501031311311</td>
+                                <td>25</td>
+                                <td class="actions-cell">
+                                    <button class="action-btn edit-btn" title="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete-btn" title="Eliminar">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <!-- Tomate cherry -->
+                            <tr>
+                                <td>Tomate cherry</td>
+                                <td>Paquete tomate cherry</td>
+                                <td>1.und</td>
+                                <td>Pepe el granjero</td>
+                                <td>20250902A</td>
+                                <td>30/06/2025</td>
+                                <td><span class="status-badge status-active"></span></td>
+                                <td>Verduras</td>
+                                <td>7501031311312</td>
+                                <td>40</td>
+                                <td class="actions-cell">
+                                    <button class="action-btn edit-btn" title="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete-btn" title="Eliminar">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <!-- Guanabana -->
+                            <tr>
+                                <td>Guanabana</td>
+                                <td>Guanabana individual</td>
+                                <td>1.und</td>
+                                <td>Pepe el granjero</td>
+                                <td>20240405A</td>
+                                <td>29/05/2025</td>
+                                <td><span class="status-badge status-inactive"></span></td>
+                                <td>Frutas</td>
+                                <td>7501031311313</td>
+                                <td>1</td>
+                                <td class="actions-cell">
+                                    <button class="action-btn edit-btn" title="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete-btn" title="Eliminar">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <!-- Tocino -->
+                            <tr>
+                                <td>Tocino</td>
+                                <td>Tocino de cerdo porcionado 600gr</td>
+                                <td>1.und</td>
+                                <td>Zenú</td>
+                                <td>20240405A</td>
+                                <td>13/07/2025</td>
+                                <td><span class="status-badge status-active"></span></td>
+                                <td>Cárnicos</td>
+                                <td>7501031311314</td>
+                                <td>15</td>
+                                <td class="actions-cell">
+                                    <button class="action-btn edit-btn" title="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete-btn" title="Eliminar">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-footer">
+                    <button class="footer-btn">Registrar Devolución</button>
+                    
+                    <div class="pagination">
+                        <button class="page-btn">Primera</button>
+                        <button class="page-btn">Anterior</button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">Siguiente</button>
+                        <button class="page-btn">Última</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>
