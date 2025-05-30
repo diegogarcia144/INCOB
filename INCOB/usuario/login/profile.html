@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INCOB - Perfil de Usuario</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="dashboard">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="user-profile">
+                <div class="user-avatar">MG</div>
+                <div class="user-info">
+                    <div class="user-name">Martina Gomez,</div>
+                    <div class="user-greeting">Bienvenido.</div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Panel admin.</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-boxes"></i>
+                    <span>Inventario</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Calendario</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Ventas</span>
+                </a>
+            </nav>
+
+            <div class="logout-section">
+                <a href="#" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Cerrar sesión</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="profile-content-area">
+                <div class="profile-header">
+                    <h1>Martina Gomez</h1>
+                    <p class="welcome-text">Bienvenido.</p>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-avatar">MG</div>
+                    
+                    <div class="profile-user-info">
+                        <h3 class="username">martina.gomez82</h3>
+                        <p class="user-role">GESTOR DE INVENTARIO</p>
+                    </div>
+
+                    <div class="profile-details">
+                        <div class="detail-row">
+                            <span class="detail-label">USUARIO</span>
+                            <span class="detail-value" id="username-field">martina.gomez82</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">CORREO</span>
+                            <span class="detail-value" id="email-field">martina.gomez82@ejemplo.com</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">ÁREA</span>
+                            <span class="detail-value">Almacén y Logística</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">REGISTRO</span>
+                            <span class="detail-value">14/02/2023</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">ROL</span>
+                            <span class="detail-value">Gestor de Inventario</span>
+                        </div>
+                    </div>
+
+                    <button class="edit-profile-btn">
+                        <i class="fas fa-user-edit"></i> Editar Perfil
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function for profile editing
+        const editProfileBtn = document.querySelector('.edit-profile-btn');
+        const usernameField = document.getElementById('username-field');
+        const emailField = document.getElementById('email-field');
+        
+        editProfileBtn.addEventListener('click', function() {
+            if (this.classList.contains('edit-mode')) {
+                // Save changes
+                const usernameInput = usernameField.querySelector('input');
+                const emailInput = emailField.querySelector('input');
+                
+                usernameField.textContent = usernameInput.value;
+                emailField.textContent = emailInput.value;
+                
+                this.innerHTML = '<i class="fas fa-user-edit"></i> Editar Perfil';
+                this.classList.remove('edit-mode', 'save-btn');
+            } else {
+                // Activate edit mode
+                usernameField.innerHTML = `<input type="text" value="${usernameField.textContent}" class="editable-field">`;
+                emailField.innerHTML = `<input type="email" value="${emailField.textContent}" class="editable-field">`;
+                
+                this.innerHTML = '<i class="fas fa-save"></i> Guardar Cambios';
+                this.classList.add('edit-mode', 'save-btn');
+                
+                usernameField.querySelector('input').focus();
+            }
+        });
+    </script>
+</body>
+</html>
